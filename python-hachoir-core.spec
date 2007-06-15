@@ -2,7 +2,7 @@
 
 Summary:    Python library to edit binary file and metadata
 Name: 		python-%{module_name}
-Version: 	0.7.2
+Version: 	0.9.0
 Release: 	%mkrel 1
 Source0: 	%{module_name}-%{version}.tar.bz2
 License:	GPL
