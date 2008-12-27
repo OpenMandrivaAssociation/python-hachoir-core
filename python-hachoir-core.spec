@@ -1,17 +1,18 @@
 %define module_name hachoir-core
 
-Summary:    Python library to edit binary file and metadata
-Name: 		python-%{module_name}
-Version: 	1.0.1
-Release: 	%mkrel 3
-Source0: 	%{module_name}-%{version}.tar.bz2
-License:	GPL
+Summary:	Python library to edit binary file and metadata
+Name:		python-%{module_name}
+Version: 	1.2.1
+Release: 	%mkrel 1
+Source0: 	http://cheeseshop.python.org/packages/source/h/%{module_name}/%{module_name}-%{version}.tar.gz
+License:	GPLv2
 Group: 		Development/Python
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-Url: 		http://hachoir.org/
-BuildArch:  noarch
-BuildRequires: python python-devel
-Obsoletes:  python-hachoir
+URL: 		http://hachoir.org/
+BuildArch:	noarch
+%{py_requires -d}
+BuildRequires:	python-setuptools
+Obsoletes:	python-hachoir
 
 %description
 Hachoir is a library written in Python which allows to see and edit a binary 
@@ -29,16 +30,16 @@ of a file without original program, or convert a file from a format to another.
 python setup.py build
 
 %install
-rm -rf $RPM_BUILD_ROOT
-python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+rm -rf %{buildroot}
+python setup.py install --root=%{buildroot} --record=INSTALLED_FILES
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files -f INSTALLED_FILES
 %defattr(-,root,root)
 %doc AUTHORS COPYING README 
 %doc doc/* 
-%dir %py_puresitedir/hachoir_core
+%dir %{py_puresitedir}/hachoir_core
 
 
