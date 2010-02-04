@@ -2,8 +2,8 @@
 
 Summary:	Python library to edit binary file and metadata
 Name:		python-%{module_name}
-Version: 	1.2.1
-Release: 	%mkrel 2
+Version: 	1.3.2
+Release: 	%mkrel 1
 Source0: 	http://cheeseshop.python.org/packages/source/h/%{module_name}/%{module_name}-%{version}.tar.gz
 License:	GPLv2
 Group: 		Development/Python
