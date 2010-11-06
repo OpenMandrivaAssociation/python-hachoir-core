@@ -10,7 +10,6 @@ Group: 		Development/Python
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 URL: 		http://hachoir.org/
 BuildArch:	noarch
-%{py_requires -d}
 BuildRequires:	python-setuptools
 Obsoletes:	python-hachoir
 
@@ -23,6 +22,7 @@ tool.
  
 It can be used to extract some informations (eg. metadata), edit some fields 
 of a file without original program, or convert a file from a format to another.
+
 %prep
 %setup -q -n %{module_name}-%version
 
@@ -36,10 +36,9 @@ python setup.py install --root=%{buildroot} --record=INSTALLED_FILES
 %clean
 rm -rf %{buildroot}
 
-%files -f INSTALLED_FILES
+%files
 %defattr(-,root,root)
 %doc AUTHORS COPYING README 
 %doc doc/* 
-%dir %{py_puresitedir}/hachoir_core
-
+%py_puresitedir/*
 
