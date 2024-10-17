@@ -8,7 +8,7 @@ Source0: 	http://cheeseshop.python.org/packages/source/h/%{module_name}/%{module
 License:	GPLv2
 Group: 		Development/Python
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-URL: 		http://hachoir.org/
+URL: 		https://hachoir.org/
 BuildArch:	noarch
 BuildRequires:	python-setuptools
 Obsoletes:	python-hachoir
